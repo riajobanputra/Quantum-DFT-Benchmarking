@@ -7,7 +7,7 @@
 
 ## Trajectory File
 
-- **`pes_trajectory.trj`**: Complete 71-structure trajectory showing β-carbon-sulfur bond breaking/formation
+- **`pes_trajectory.xyz`**: Complete 71-structure trajectory showing β-carbon-sulfur bond breaking/formation
   - Visualises the entire reaction coordinate
   - Can be opened in ChimeraX, VMD, PyMOL, or other molecular viewers
   - Shows smooth transition from reactant to product
