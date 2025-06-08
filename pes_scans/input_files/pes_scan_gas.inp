@@ -1,0 +1,9 @@
+! M062X ma-def2-SVP defgrid3
+! Opt TightSCF
+
+%maxcore 6000
+%pal nprocs 16 end
+%geom scan B 4 5 = 1.5, 5.0, 71 end end
+%geom maxiter 500 end
+
+* xyzfile -1 1 qm_region.xyz
