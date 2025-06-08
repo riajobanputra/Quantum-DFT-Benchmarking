@@ -37,8 +37,7 @@ Systematic PES scans modeling the breaking/formation of the β-carbon-sulfur bon
 ### results/
 - `energies_pes_scan_gas.dat`: Complete energy data for all methods (gas phase)
 - `energies_pes_scan_solvent.dat`: Complete energy data for all methods (solvent)
-- `sample_structures/`: Representative geometries from the 71-point scan
-- Full set of 71 structures generated but not uploaded (available on request)
+- `pes_trajectory.trj`: Complete 71-structure trajectory showing Cβ–S bond breaking/formation
 
 ## Quantum Computing Applications
 
