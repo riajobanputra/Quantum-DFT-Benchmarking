@@ -23,9 +23,23 @@ This systematic DFT study of covalent drug binding mechanisms provides:
 
 ## Repository Structure
 ```
-├── input_files/     # ORCA calculation inputs
-├── results/         # DFT energies and geometries
-└── scripts/         # Analysis tools
+├── structures/              # Initial QM region setup
+│   ├── qm_region_initial.xyz    # Chemically active region
+│   └── README.md                # System details and usage
+├── pes_scans/              # Potential energy surface calculations
+│   ├── input_files/            # Template input files and scripts
+│   ├── results/                # Energy data and sample structures
+│   └── README.md               # 71-point scan methodology
+├── optimizations/          # Geometry optimizations
+│   ├── reactant/               # Reactant minimum structures
+│   ├── transition_state/       # Transition state structures
+│   └── README.md               # Optimization protocol
+├── dlpno_calculations/     # High-level reference calculations
+│   ├── input_template/         # CCSD(T) template files
+│   ├── sample_calculations/    # Representative examples
+│   └── README.md               # 71-calculation overview
+├── methodology/            # Detailed computational methods
+└── scripts/                # Analysis and processing tools
 ```
 
 ## Usage
