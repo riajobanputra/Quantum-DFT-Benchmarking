@@ -1,120 +1,79 @@
-# Quantum-Classical Computational Methodology
+# Computational Details
 
 ## Overview
 
-This repository contains comprehensive quantum-classical benchmarking calculations for molecular electronic structure, focusing on density functional theory (DFT) validation of quantum computing algorithms. The work addresses **covalent bond formation mechanisms** - a fundamental quantum mechanical process ideal for demonstrating quantum computational advantages in molecular simulation.
+Comprehensive quantum-classical benchmarking study of β-carbon-sulfur bond formation in CDK12 inhibitor mechanisms. Provides systematic DFT validation data for quantum computing algorithm development, particularly Variational Quantum Eigensolver (VQE) applications.
 
-### Quantum Computing Motivation
-**Covalent bond breaking and formation** represents one of the most challenging problems in classical computational chemistry, involving complex electron correlation effects that are naturally suited to quantum algorithms. The **β-carbon-sulfur bond formation** studied here serves as an ideal benchmark system for:
-- **Variational Quantum Eigensolver (VQE)** development and validation
-- **Quantum advantage demonstrations** in chemical reaction modeling  
-- **Near-term quantum device applications** in computational chemistry
+## System Definition
 
-The calculations provide classical reference data for quantum algorithm development, establishing a reliable foundation for quantum molecular simulation of **transition state chemistry** - where quantum effects are most pronounced and classical methods face their greatest limitations.
-
-## Classical Benchmarking Framework
-
-### Software and Quantum-Ready Setup
-- **ORCA version**: 5.0.4 (classical reference for quantum algorithm validation)
-- **Target system**: β-carbon-sulfur bond breaking (ideal for 12-16 qubit quantum circuits)
+- **Chemical process**: Thio-Michael addition mechanism (covalent drug binding)
+- **QM region**: CDK12 inhibitor + cysteine 1039 interaction site
 - **System charge**: -1 e
+- **Target bond**: β-carbon-sulfur formation/breaking
+- **Quantum relevance**: Fundamental covalent bond process ideal for 12-16 qubit quantum circuits
+
+## Computational Protocol
+
+### Software and Setup
+- **Package**: ORCA 5.0.4
 - **Basis set**: ma-def2-SVP (quantum-classical mapping compatible)
-- **Solvent model**: CPCM water (relevant for quantum simulation of solvated systems)
+- **Environments**: Gas phase and CPCM water solvation
 
-## Density Functional Approximations for Quantum Benchmarking
+### Methodology Hierarchy
 
-Comprehensive classical methods provide validation targets for quantum algorithms:
+#### 1. Potential Energy Surface Mapping
+- **Scan range**: β-carbon-sulfur bond distance 1.5-5.0 Å (0.05 Å steps)
+- **Total points**: 71 geometries per method
+- **Methods**: 8+ density functional approximations + Hartree-Fock
+- **Purpose**: Generate quantum algorithm training data
 
-### Hybrid Functionals (Quantum Algorithm Benchmarks)
-- **ωB97X-D3(BJ)**: High-accuracy reference for VQE validation
-- **M06-2X**: Primary benchmark method for quantum circuit optimization
-- **B3LYP**: With and without D3(BJ) - standard quantum chemistry reference
+#### 2. Structure Optimization
+- **Primary method**: M06-2X (clearest transition state definition)
+- **Targets**: Reactant minimum and transition state
+- **Validation**: Frequency analysis (0/1 imaginary frequencies)
+- **Cross-validation**: All DFAs optimized from M06-2X starting geometries
 
-### Meta-GGA and GGA Functionals (Quantum Scaling Studies)
-- **TPSS, SCAN**: Advanced functionals for quantum algorithm comparison
-- **PBE**: With and without D3(BJ) - computational efficiency benchmarks
-- **LDA**: Minimal complexity reference for quantum circuit validation
+#### 3. High-Level Reference
+- **Method**: DLPNO-CCSD(T)/aug-cc-pVTZ
+- **Scope**: All 71 PES geometries
+- **Purpose**: Gold standard for quantum algorithm accuracy assessment
 
-### Reference Methods
-- **HF**: Wavefunction-based quantum computing baseline
-- **DLPNO-CCSD(T)**: Gold standard for quantum algorithm accuracy assessment
+## Density Functional Approximations
 
-## Quantum-Classical Hybrid Protocol
+**Systematic benchmark across accuracy levels:**
 
-### 1. Classical Potential Energy Surface Generation (Quantum Training Data)
-
-**Objective**: Generate reference data for quantum algorithm development and validation
-
-**Parameters optimized for quantum applications**:
-- Bond distance range: 1.5 Å to 5.0 Å (suitable for quantum circuit depth studies)
-- Step size: 0.05 Å (sufficient resolution for VQE convergence analysis)
-- Environment: Gas phase and aqueous solution (quantum-classical hybrid benchmarking)
-
-### 2. Quantum-Ready Structure Characterization
-
-**M06-2X selection rationale for quantum computing**:
-- Most well-defined transition state peak (optimal for quantum state preparation)
-- Highest accuracy method for quantum algorithm validation
-- Computational balance suitable for quantum-classical comparison studies
-
-**Optimization Protocol for Quantum Applications**:
-1. **Ground state reference**: Quantum algorithm target energies
-2. **Transition state mapping**: First-order saddle point for quantum optimization landscapes
-
-### 3. Quantum Algorithm Validation Framework
-
-**Frequency Analysis for Quantum Verification**:
-- **Ground state confirmation**: Zero imaginary frequencies (quantum ground state validation)
-- **Transition state characterization**: Single imaginary frequency (quantum barrier calculations)
-
-**Energy Benchmarking for Quantum Algorithms**:
-- Single-point energies (VQE target values)
-- Gibbs free energies (quantum thermodynamic calculations)
-- Multi-method comparison (quantum algorithm accuracy assessment)
-
-### 4. High-Level Quantum-Classical Reference
-
-**DLPNO-CCSD(T) as Quantum Gold Standard**:
-- **Basis set**: aug-cc-pVTZ (quantum-classical accuracy comparison)
-- **Geometries**: M06-2X optimized (consistent quantum algorithm testing)
-- **Solvent**: CPCM water (quantum simulation validation)
-- **Purpose**: Ultimate accuracy benchmark for quantum computing applications
+- **Hybrid**: ωB97X-D3(BJ), M06-2X, B3LYP ± D3(BJ)
+- **Meta-GGA**: TPSS, SCAN  
+- **GGA**: PBE ± D3(BJ)
+- **LDA**: Local density approximation
+- **Reference**: Hartree-Fock, DLPNO-CCSD(T)
 
 ## Quantum Computing Applications
 
-### Variational Quantum Eigensolver (VQE) Development
-- Classical energies provide target values for quantum circuit optimization
-- Systematic DFA comparison enables quantum algorithm validation across accuracy levels
-- Transition state data supports quantum optimization landscape studies
+### Algorithm Development
+- **VQE validation**: Classical reference energies for quantum circuit optimization
+- **Resource estimation**: Molecular complexity for near-term quantum devices
+- **Quantum advantage**: Performance benchmarking against classical methods
 
-### Quantum Resource Estimation
-- Molecular system complexity informs qubit requirements (estimated 12-16 qubits)
-- Bond breaking mechanism suitable for near-term quantum device applications
-- Classical benchmarks enable quantum advantage assessment
+### Target Applications
+- **Transition state chemistry**: Quantum optimization landscape studies
+- **Covalent drug design**: Quantum-enhanced pharmaceutical discovery
+- **Hybrid algorithms**: Quantum-classical molecular simulation integration
 
-### Quantum-Classical Hybrid Algorithms
-- DFT reference data supports hybrid algorithm development
-- Multiple functional comparison enables quantum algorithm benchmarking
-- Solvation effects provide quantum environment simulation targets
+## Data Organisation
 
-## Computational Workflow for Quantum Applications
+Calculations systematically organized to support quantum algorithm development:
+- **Reproducible templates**: Standard input files for method comparison
+- **Benchmark datasets**: Energy surfaces for VQE training and validation  
+- **Reference standards**: CCSD(T) accuracy targets for quantum computing goals
 
-1. **Classical Reference Generation**: Systematic energy surface mapping for quantum validation
-2. **Quantum Target Identification**: Ground and transition state energies for VQE development  
-3. **Multi-Method Benchmarking**: Comprehensive accuracy assessment for quantum algorithms
-4. **High-Level Validation**: CCSD(T) gold standard for quantum computing accuracy goals
-5. **Quantum Algorithm Testing**: Use classical data for VQE circuit optimization and validation
+## Expected Impact
 
-## Quantum Computing Relevance
+Foundation for quantum molecular simulation algorithm development, enabling:
+- VQE circuit design and optimization
+- Quantum advantage assessment in chemical applications
+- Hybrid quantum-classical drug discovery methodologies
 
-- **Near-term Applications**: Molecular system suitable for NISQ devices
-- **Algorithm Development**: Comprehensive benchmark data for quantum method validation
-- **Quantum Advantage Studies**: Classical reference enables performance comparison
-- **Hybrid Computing**: Integration framework for quantum-classical molecular simulation
+---
 
-## Expected Quantum Computing Impact
-
-- VQE algorithm validation and optimization using classical reference energies
-- Quantum circuit design informed by molecular electronic structure complexity
-- Quantum advantage assessment through systematic classical benchmarking
-- Foundation for quantum molecular simulation algorithm development
+*Detailed implementation specifics available in individual folder README files.*
