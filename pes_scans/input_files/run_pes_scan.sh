@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=SPE
+#SBATCH --job-name=pes
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=16
 #SBATCH --mem=128g
