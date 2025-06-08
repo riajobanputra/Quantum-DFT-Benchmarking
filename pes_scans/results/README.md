@@ -5,35 +5,27 @@
 - **`energies_pes_scan_gas.dat`**: Complete energy dataset for gas phase calculations
 - **`energies_pes_scan_solvent.dat`**: Complete energy dataset with CPCM water solvation
 
-## Data Structure
+## Trajectory File
 
-Each `.dat` file contains systematic energy data across:
+- **`pes_trajectory.trj`**: Complete 71-structure trajectory showing β-carbon-sulfur bond breaking/formation
+  - Visualises the entire reaction coordinate
+  - Can be opened in ChimeraX, VMD, PyMOL, or other molecular viewers
+  - Shows smooth transition from reactant to product
+
+## Data Coverage
+
 - **71 bond distances**: 1.5-5.0 Å (0.05 Å increments)  
 - **Multiple DFAs**: All density functional approximations studied
 - **Consistent basis**: ma-def2-SVP throughout
 
-## Sample Structures
-
-The `sample_structures/` folder contains representative geometries from the 71-point scans:
-- Key points along the reaction coordinate
-- Reactant, transition state, and product regions
-- Examples for quantum circuit design and testing
-
-## Full Dataset
-
-Complete set of 71 geometries per method available separately due to repository size constraints. The sample structures provide sufficient examples for:
-- Quantum algorithm development
-- VQE circuit testing  
-- Method validation studies
-
 ## Quantum Computing Applications
 
 This data enables:
-- **VQE training**: Reference energies for quantum circuit optimisation
+- **VQE training**: Reference energies for quantum circuit optimization
 - **Algorithm validation**: Classical benchmarks for quantum method assessment  
 - **Resource estimation**: Molecular complexity analysis for quantum devices
-- **Hybrid development**: Quantum-classical algorithm integration studies
+- **Reaction visualisation**: Understanding quantum optimization landscapes
 
-## Data Format
+## Usage
 
-Energy files formatted for direct use in quantum computing workflows and classical analysis pipelines.
+The trajectory file provides the complete structural evolution for quantum algorithm development and can be used to extract specific geometries as needed for quantum circuit testing.
