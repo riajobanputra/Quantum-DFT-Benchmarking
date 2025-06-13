@@ -16,10 +16,5 @@ Each calculation folder contains:
 The examples represent:
 - Different points along the reaction coordinate
 - Typical calculation setup and execution
-- Expected output format and energy extraction
 
-## Energy Extraction Example
 
-Extract CCSD(T) energies from these examples:
-```bash
-python ../../scripts/extract_energies.py . --ccsd -o sample_ccsd_energies.csv
