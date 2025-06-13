@@ -1,0 +1,8 @@
+! DLPNO-CCSD(T) aug-cc-pVTZ aug-cc-pVTZ/C
+! VeryTightSCF
+! CPCM(Water)
+
+%maxcore 48000
+%pal nprocs 20 end
+
+* xyzfile -1 1 DFT.001.xyz
