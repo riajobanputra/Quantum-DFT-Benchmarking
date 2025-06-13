@@ -19,7 +19,7 @@ Domain-based Local Pair Natural Orbital Coupled Cluster calculations provide gol
 - **Bond distances**: 1.5 Å to 5.0 Å (0.05 Å increments)
 - **Consistent basis**: M06-2X geometries for all CCSD(T) calculations
 
-### Organization
+### Organisation
 Each calculation organised in separate folder containing:
 - `structure.xyz`: Geometry from M06-2X PES scan
 - `dlpno_calculation.inp`: CCSD(T) input file
@@ -48,13 +48,16 @@ DLPNO-CCSD(T) represents:
 
 ### Included
 - `input_template/`: Representative input file and structure
-- `sample_calculations/`: 3-5 example complete calculations
+- `sample_calculations/`: 1-2 example complete calculations
+- `extract_dlpno_energies.py`: Python script to extract all CCSD(T) energies
 
 ### Full Dataset
-- **71 complete calculations** available separately due to size
-- **Energy extraction**: Use `scripts/extract_energies.py --ccsd` to compile all CCSD(T) energies
+- **71 complete calculations** performed but not uploaded (identical structure to examples)
+- **Energy extraction**: Use provided Python script to reproduce energy compilation
 - **Reproduction instructions** using template files
 
-## Usage Notes
+## Data Extraction
 
-The template files enable reproduction of the complete 71-point CCSD(T) benchmark. Each calculation provides definitive reference energy for quantum algorithm development and validation at the corresponding reaction coordinate point.
+Use the provided Python script to extract energies from your complete dataset:
+```bash
+python extract_dlpno_energies.py /path/to/your/71/folders/ --ccsd -o ccsd_energies.csv
